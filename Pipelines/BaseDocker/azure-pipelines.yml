@@ -64,6 +64,6 @@ stages:
                 inputs:
                   containerregistrytype: 'Container Registry'
                   dockerRegistryEndpoint: 'WisterDR'
-                  dockerComposeFile: '**/docker-compose.yml'
+                  dockerComposeFile: '**/Docker-compose.yml'
                   action: 'Run a Docker Compose command'
 
