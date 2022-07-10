@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  build:
+    image: ${DOCKER_REGISTRY-}azure-pipelines
+    build:
+      context: .
+      dockerfile: VoyagerApi/Dockerfile
