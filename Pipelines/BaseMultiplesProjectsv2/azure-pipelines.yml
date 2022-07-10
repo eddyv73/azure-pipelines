@@ -1,0 +1,112 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+variables:
+  corepath: 'Pipelines/BaseMultiplesProjects/EventHorizont/EventHorizont.sln'
+  projectvoyager: 'Pipelines/BaseMultiplesProjects/EventHorizont/VoyagerApi/VoyagerApi.csproj'
+  projectgalileo: 'Pipelines/BaseMultiplesProjects/EventHorizont/Galileo/GalileoApi.csproj '
+
+
+trigger:
+- develop
+
+
+stages:
+
+    - stage: 'BuildSolution'
+      pool:
+        vmImage: 'ubuntu-latest'
+      jobs:
+        - job: Build
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Restore'
+                inputs:
+                  command: 'restore'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+                
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+
+    - stage: 'BuildOnError'
+      dependsOn: BuildSolution
+      condition: failed()
+      jobs:
+        - job: RestoreVoyager
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Restore Voyager'
+                inputs:
+                  command: 'restore'
+                  projects: '$(projectvoyager)'
+                  configuration: $(buildConfiguration)
+        - job: RestoreGalileo
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Restore Galileo'
+                inputs:
+                  command: 'restore'
+                  projects: '$(projectgalileo)'
+                  configuration: $(buildConfiguration)
+
+        - job: BuildVoyager
+          steps:              
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(projectvoyager)'
+                  configuration: $(buildConfiguration)
+
+        - job: BuildGalileo
+          steps:  
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(projectgalileo)'
+                  configuration: $(buildConfiguration)
+
+    - stage: 'Tests'
+      dependsOn:
+        - BuildSolution
+      jobs:
+        - job: Test
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Test'
+                inputs:
+                  command: 'test'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+
+
+    - stage: 'Publish'
+      dependsOn:
+        - Tests
+      jobs:
+        - job: Publish
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Publish'
+                inputs:
+                  command: 'publish'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+                  arguments: '--configuration debug --output $(Build.ArtifactStagingDirectory)'                
+
+              - task: PublishBuildArtifacts@1
+                displayName: Upload Artifacts
+                inputs:
+                  pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+                  artifactName: 'voyager.dev'
+                  
+
+
+
