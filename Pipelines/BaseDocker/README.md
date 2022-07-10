@@ -1,4 +1,4 @@
-Azure pipeline for simple solution.
+# Azure pipeline for simple solution with docker and docker compose.
 
 Azure DevOps : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BaseDocker?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=48&branchName=develop)
 
