@@ -5,6 +5,7 @@
 variables:
   corepath: 'Pipelines/BaseDocker/EventHorizont/EventHorizont.sln'
   dockerfilepath : 'Pipelines/BaseDocker/EventHorizont/VoyagerApi/Dockerfile'
+  DOCKER_REGISTRY : 'wister'
 
 trigger:
 - develop
