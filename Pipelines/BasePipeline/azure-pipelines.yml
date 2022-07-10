@@ -13,7 +13,7 @@ stages:
 
     - stage: 'BuildSolution'
       pool:
-        name: default
+        vmImage: 'ubuntu-latest'
       jobs:
         - job: build
           steps:
