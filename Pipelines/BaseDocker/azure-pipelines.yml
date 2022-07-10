@@ -59,13 +59,11 @@ stages:
           dependsOn:
             - Test
           steps:
-              - task: Docker@2
-                inputs:
-                  containerRegistry: 'WisterDR'
-                  repository: 'azure-pipelines'
-                  command: 'buildAndPush'
-                  Dockerfile: '$(dockerfilepath)'
                                 
-
-
+              - task: DockerCompose@0
+                inputs:
+                  containerregistrytype: 'Container Registry'
+                  dockerRegistryEndpoint: 'WisterDR'
+                  dockerComposeFile: '**/docker-compose.yml'
+                  action: 'Run a Docker Compose command'
 
