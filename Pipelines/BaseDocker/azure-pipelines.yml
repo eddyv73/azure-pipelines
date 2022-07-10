@@ -3,8 +3,8 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 variables:
-  corepath: 'Pipelines/BasePipeline/EventHorizont/EventHorizont.sln'
-  dockerfilepath : 'Pipelines/BasePipeline/EventHorizont/VoyagerApi/Dockerfile'
+  corepath: 'Pipelines/BaseDocker/EventHorizont/EventHorizont.sln'
+  dockerfilepath : 'EventHorizont/VoyagerApi/Dockerfile'
 
 trigger:
 - develop
