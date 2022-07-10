@@ -34,9 +34,11 @@ stages:
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
 
+    - stage: 'BuildOnError'
+      dependsOn: BuildSolution
+      condition: failed()
+      jobs:
         - job: RestoreProjects
-          dependsOn: Build
-          condition: failed()
           steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Restore Voyager'
@@ -52,8 +54,6 @@ stages:
                   projects: '$(projectgalileo)'
                   configuration: $(buildConfiguration)
         - job: BuildProjects
-          dependsOn: Build
-          condition: failed()
           steps:              
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Build'
@@ -69,6 +69,8 @@ stages:
                   projects: '$(projectgalileo)'
                   configuration: $(buildConfiguration)
 
+    - stage: 'Tests'
+      jobs:
         - job: Test
           dependsOn:
             - build
@@ -79,7 +81,10 @@ stages:
                   command: 'test'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
+                  
 
+    - stage: 'Publish'
+      jobs:
         - job: Publish
           dependsOn:
             - Test
