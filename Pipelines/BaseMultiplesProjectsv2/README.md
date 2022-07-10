@@ -16,7 +16,7 @@ Steps
  - Test
  - Publish
 
-Structure
+Pipeline Structure
 
 ```yml
 stages:
@@ -33,7 +33,7 @@ stages:
         - job: upload
 ```
 
-File Structure
+Files Structure
 ```
 
 └ EventHorizont
