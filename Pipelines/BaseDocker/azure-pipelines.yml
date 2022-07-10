@@ -1,0 +1,65 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+variables:
+  corepath: 'Pipelines/BasePipeline/EventHorizont/EventHorizont.sln'
+
+trigger:
+- develop
+
+
+stages:
+
+    - stage: 'BuildSolution'
+      pool:
+        vmImage: 'ubuntu-latest'
+      jobs:
+        - job: Build
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Restore'
+                inputs:
+                  command: 'restore'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+                
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+
+        - job: Test
+          dependsOn:
+            - build
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Test'
+                inputs:
+                  command: 'test'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+
+        - job: Publish
+          dependsOn:
+            - Test
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Publish'
+                inputs:
+                  command: 'publish'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+                  arguments: '--configuration debug --output $(Build.ArtifactStagingDirectory)'                
+
+              - task: PublishBuildArtifacts@1
+                displayName: Upload Artifacts
+                inputs:
+                  pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+                  artifactName: 'voyager.dev'
+                  
+
+
+
