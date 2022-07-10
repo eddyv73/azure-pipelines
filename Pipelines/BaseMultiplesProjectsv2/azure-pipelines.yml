@@ -11,7 +11,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - template: Pipelines/variables/global.vars.yml
+  - template: Pipeline/variables/global.vars.yml
   
 
 stages:
