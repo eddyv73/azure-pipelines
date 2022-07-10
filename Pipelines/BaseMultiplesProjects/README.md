@@ -2,8 +2,12 @@ Azure pipeline for simple solution.
 
 Azure DevOps : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultiplePro?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=46&branchName=develop)
 
-This example works for a simple solution with one project.
+This example works for a single solution with multiples projects.
 
+## Cons
+Considerations: This design is slow, because verify project by project.
+## Pros
+Considerations: This design is nice to identify errors in the build, because you can see Build and Restore every project.
 # Base
 Steps
 
@@ -19,12 +23,14 @@ stages:
     - stage: Build and Restore
         - job: restore
         - job: build
+    - stage: Build and Restore Single per project # Conditional stage, only run if the stage 'Build and Restore' fails
+        - job: restore single project # Conditional job restore project by project
+        - job: build single project # Conditional job build project by project
     - stage: Test
         - job: test
     - stage: Publish
         - job: publish
         - job: upload
 ```
-<img width="275" alt="image" src="https://user-images.githubusercontent.com/19657324/178130746-d715d143-de59-48a1-a183-2f8c2c162c42.png">
 
 
