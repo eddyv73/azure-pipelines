@@ -1,6 +1,6 @@
 # Azure pipeline for multiples projects.
 
-Azure DevOps : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultiplePro?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=46&branchName=develop)
+Azure DevOps : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultipleProV2?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=47&branchName=develop)
 
 This example works for a single solution with multiples projects.
 
