@@ -1,10 +1,11 @@
-# azure-pipelines
+# Azure-pipelines
 Azure Pipelines for multiples escenarios.
 
 The Examples escenarios for multiples projects has the same solution and code, but the difference is the files structure.
 
 
-# Base
+# Base [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipeline?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=45&branchName=develop)
+
 Solution for C# Project.
 
  - Restore
@@ -12,7 +13,7 @@ Solution for C# Project.
  - Test
  - Publish
 
-# Base multiples projects
+# Base multiples projects [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultiplePro?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=46&branchName=develop)
 Solution for C# 2 or more Projects.
 
  - Restore
@@ -20,7 +21,7 @@ Solution for C# 2 or more Projects.
  - Test
  - Publish
 
-# Base multiples projects v2
+# Base multiples projects v2  [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultipleProV2?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=47&branchName=develop)
 Solution for C# 2 or more Projects.
 
  - Restore
