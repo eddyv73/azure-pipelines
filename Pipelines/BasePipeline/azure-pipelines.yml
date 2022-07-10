@@ -15,7 +15,7 @@ stages:
       pool:
         vmImage: 'ubuntu-latest'
       jobs:
-        - job: build
+        - job: Build
           steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Restore'
@@ -36,7 +36,7 @@ stages:
             - build
           steps:
               - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Build'
+                displayName: 'Dotnet Test'
                 inputs:
                   command: 'test'
                   projects: '$(corepath)'
