@@ -62,8 +62,18 @@ stages:
                                 
               - task: DockerCompose@0
                 inputs:
+                  action: Build services
                   containerregistrytype: 'Container Registry'
                   dockerRegistryEndpoint: 'WisterDR'
                   dockerComposeFile: '**/Docker-compose.yml'
-                  action: 'Run a Docker Compose command'
+                  qualifyImageNames: true
+                  additionalImageTags: $(Build.BuildId)
 
+              - task: DockerCompose@0
+                inputs:
+                  action: Push services
+                  containerregistrytype: 'Container Registry'
+                  dockerRegistryEndpoint: 'WisterDR'
+                  dockerComposeFile: '**/Docker-compose.yml'
+                  qualifyImageNames: true
+                  additionalImageTags: $(Build.BuildId)
