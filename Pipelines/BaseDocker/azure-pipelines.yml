@@ -4,6 +4,7 @@
 # https://aka.ms/yaml
 variables:
   corepath: 'Pipelines/BasePipeline/EventHorizont/EventHorizont.sln'
+  dockerfilepath : 'Pipelines/BasePipeline/EventHorizont/VoyagerApi/Dockerfile'
 
 trigger:
 - develop
@@ -63,7 +64,7 @@ stages:
                   containerRegistry: 'WisterDR'
                   repository: 'azure-pipelines'
                   command: 'buildAndPush'
-                  Dockerfile: '**/Dockerfile'
+                  Dockerfile: '$(dockerfilepath)'
                                 
 
 
