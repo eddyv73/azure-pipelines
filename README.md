@@ -11,6 +11,9 @@ The solutions in the examples is named : Event Horizont, has two dotnet projects
 The APIs in the examples are named : Voyager and Galileo.
 (Like a spacecrafts)
 
+
+All Azure DevOps Pipelines [Azure DevOps](https://dev.azure.com/wistercorp/azure-pipelines/_build)
+
 # Base
 Azure DevOps Pipeline [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipeline?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=45&branchName=develop)
 # Base multiples projects
