@@ -15,9 +15,10 @@ variables:
   
 
 stages:
+
     - stage: 'BuildSolution'
-      variables:
-        - template: Pipeline/Variables/globals-vars.yml
+      # variables:
+      #   - template: Pipeline/Variables/globals-vars.yml
       jobs:
       - template: Pipeline/dotnet-build.yml
 
