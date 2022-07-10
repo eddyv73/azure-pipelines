@@ -30,7 +30,7 @@ Solution for C# 2 or more Projects.
  - Publish
 
 
-# Base docker using docker-compose
+# Base docker using docker-compose [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BaseDocker?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=48&branchName=develop)
 Solution for C# Project with docker.
 
  - Restore
