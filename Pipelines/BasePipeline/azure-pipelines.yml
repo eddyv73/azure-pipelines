@@ -41,7 +41,23 @@ stages:
                   command: 'test'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
-                
+
+        - job: Publish
+          dependsOn:
+            - Test
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Publish'
+                inputs:
+                  command: 'publish'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
+
+              - task: PublishBuildArtifacts@1
+                displayName: Upload Artifacts
+                inputs:
+                  pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+                  artifactName: 'Apis.dev'
                   
 
 

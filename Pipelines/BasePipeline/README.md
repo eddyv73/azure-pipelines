@@ -21,6 +21,7 @@ stages:
         - job: build
     - stage: Test
         - job: test
+    - stage: Publish
 ```
 
 
