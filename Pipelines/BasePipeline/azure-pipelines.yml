@@ -52,12 +52,13 @@ stages:
                   command: 'publish'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
+                  arguments: '--configuration debug --output $(Build.ArtifactStagingDirectory)'                
 
               - task: PublishBuildArtifacts@1
                 displayName: Upload Artifacts
                 inputs:
                   pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-                  artifactName: 'Apis.dev'
+                  artifactName: 'voyager.dev'
                   
 
 

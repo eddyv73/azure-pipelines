@@ -22,6 +22,10 @@ stages:
     - stage: Test
         - job: test
     - stage: Publish
+        - job: publish
+        - job: upload
+        
+    
 ```
 
 
