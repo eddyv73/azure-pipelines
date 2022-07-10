@@ -3,7 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 variables:
-  corepath: 'Pipelines/BasePipeline/EventHorizont/EventHorizont.sln'
+  corepath: 'Pipelines/BaseMultiplesProjects/EventHorizont/EventHorizont.sln'
 
 trigger:
 - develop
