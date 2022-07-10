@@ -38,7 +38,7 @@ stages:
       dependsOn: BuildSolution
       condition: failed()
       jobs:
-        - job: RestoreProjects
+        - job: RestoreVoyager
           steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Restore Voyager'
@@ -46,14 +46,16 @@ stages:
                   command: 'restore'
                   projects: '$(projectvoyager)'
                   configuration: $(buildConfiguration)
-
+        - job: RestoreGalileo
+          steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Restore Galileo'
                 inputs:
                   command: 'restore'
                   projects: '$(projectgalileo)'
                   configuration: $(buildConfiguration)
-        - job: BuildProjects
+
+        - job: BuildVoyager
           steps:              
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Build'
@@ -62,6 +64,8 @@ stages:
                   projects: '$(projectvoyager)'
                   configuration: $(buildConfiguration)
 
+        - job: BuildGalileo
+          steps:  
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Build'
                 inputs:
