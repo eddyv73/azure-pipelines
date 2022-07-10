@@ -3,7 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 variables:
-  corepath: './EventHorizont/EventHorizont.sln'
+  corepath: 'Pipelines/BasePipeline/EventHorizont/EventHorizont.sln'
 
 trigger:
 - develop
@@ -20,7 +20,7 @@ stages:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Restore'
                 inputs:
-                  command: 'build'
+                  command: 'restore'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
                 
