@@ -50,3 +50,14 @@ Solution for C# Project with docker, with error control.
  - Build Docker
  - Push Docker
 
+
+# Avanced build and deployment in Azure Kubernetes Service (AKS)
+
+Solution for C# Project with docker,and deployments.
+
+ - Restore
+ - Build
+ - Test
+ - Build Docker
+ - Push Docker
+ - Deployment

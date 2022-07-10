@@ -42,7 +42,5 @@ Azure DevOps Pipeline  V2 : [![Build Status](https://dev.azure.com/wistercorp/az
 `Coming soon`
 # Avanced build with docker using docker-compose
 `Coming soon`
-# Avanced build with docker using docker-compose
-`Coming soon`
 # Avanced build and deployment in Azure Kubernetes Service (AKS)
 `Coming soon`
