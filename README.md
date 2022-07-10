@@ -17,14 +17,14 @@ All Azure DevOps Pipelines [Azure DevOps](https://dev.azure.com/wistercorp/azure
 # Base
 Location: 
 ```
-└ Pipeline /
+└ Pipelines /
     └ Basepipeline /
 ```
 Azure DevOps Pipeline [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipeline?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=45&branchName=develop)
 # Base multiples projects
 Location: 
 ```
-└ Pipeline /
+└ Pipelines /
     └ BaseMultiplesProjects /
 ``` 
 
@@ -32,7 +32,7 @@ Azure DevOps Pipeline  V1 :  [![Build Status](https://dev.azure.com/wistercorp/a
 
 Location: 
 ```
-└ Pipeline /
+└ Pipelines /
     └ BaseMultplesprojectsv2 /
 ```
 
