@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 variables:
   corepath: 'Pipelines/BaseDocker/EventHorizont/EventHorizont.sln'
-  dockerfilepath : 'EventHorizont/VoyagerApi/Dockerfile'
+  dockerfilepath : 'Pipelines/BaseDocker/EventHorizont/VoyagerApi/Dockerfile'
 
 trigger:
 - develop
