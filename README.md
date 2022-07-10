@@ -1,49 +1,14 @@
 # azure-pipelines
 Azure Pipelines for multiples escenarios
 
-# Base
-Solution for C# Project.
+In this repository, you can found multiples escenarios for Azure Pipelines and some "Good" practices.
 
- - Restore
- - Build
- - Test
- - Publish
+# Base
 
 # Base multiples projects
-Solution for C# 2 or more Projects.
-
- - Restore
- - Build
- - Test
- - Publish
 
 # Base docker using docker-compose
-Solution for C# Project with docker.
-
- - Restore
- - Build
- - Test
- - Build Docker
- - Push Docker
-
 
 # Avanced build with docker using docker-compose
 
-Solution for C# Project with docker, with error control.
-
- - Restore
- - Build
- - Test
- - Build Docker
- - Push Docker
-
-
 # Avanced build with docker using docker-compose
-
-Solution for C# Project with docker, with error control.
-
- - Restore
- - Build
- - Test
- - Build Docker
- - Push Docker
