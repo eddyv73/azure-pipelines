@@ -33,4 +33,5 @@ stages:
         - job: upload
 ```
 
+<img width="502" alt="image" src="https://user-images.githubusercontent.com/19657324/178131885-4c89085b-bc13-49b0-a7da-65863d247585.png">
 
