@@ -85,7 +85,7 @@ stages:
 
     - stage: 'Publish'
       dependsOn:
-        - BuildSolution
+        - Tests
       jobs:
         - job: Publish
           steps:
