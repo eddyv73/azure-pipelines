@@ -56,3 +56,5 @@ Pipelines/BaseDocker/EventHorizont/VoyagerApi/bin/
 Pipelines/BaseDocker/EventHorizont/VoyagerApi/obj/
 
 Pipelines/BaseDocker/EventHorizont/VoyagerTest/obj/
+
+Pipelines/BaseDocker/EventHorizont/.idea/
