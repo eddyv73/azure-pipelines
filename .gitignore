@@ -48,3 +48,11 @@ Pipelines/BaseMultiplesProjectsv2/EventHorizont/VoyagerApi/obj/
 Pipelines/BaseMultiplesProjectsv2/EventHorizont/VoyagerTest/bin/
 
 Pipelines/BaseMultiplesProjectsv2/EventHorizont/VoyagerTest/obj/
+
+Pipelines/BaseDocker/EventHorizont/.vs/
+
+Pipelines/BaseDocker/EventHorizont/VoyagerApi/bin/
+
+Pipelines/BaseDocker/EventHorizont/VoyagerApi/obj/
+
+Pipelines/BaseDocker/EventHorizont/VoyagerTest/obj/
