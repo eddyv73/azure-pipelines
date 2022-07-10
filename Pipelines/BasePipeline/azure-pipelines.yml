@@ -32,6 +32,8 @@ stages:
                   configuration: $(buildConfiguration)
 
         - job: Test
+          dependsOn:
+            - build
           steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Build'
