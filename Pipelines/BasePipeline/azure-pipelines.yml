@@ -30,6 +30,15 @@ stages:
                   command: 'build'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
+
+        - job: Test
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
                 
                   
 
