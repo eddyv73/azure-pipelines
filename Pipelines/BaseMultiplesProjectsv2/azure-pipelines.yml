@@ -24,75 +24,28 @@ stages:
     - stage: 'BuildOnError'
       dependsOn: BuildSolution
       condition: failed()
+      variables:
+        - template: Pipeline/Variables/globals-vars.yml
       jobs:
-        - job: RestoreVoyager
-          steps:
-              - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Restore Voyager'
-                inputs:
-                  command: 'restore'
-                  projects: '$(projectvoyager)'
-                  configuration: $(buildConfiguration)
-        - job: RestoreGalileo
-          steps:
-              - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Restore Galileo'
-                inputs:
-                  command: 'restore'
-                  projects: '$(projectgalileo)'
-                  configuration: $(buildConfiguration)
+      - template: Pipeline/dotnet-error.yml
 
-        - job: BuildVoyager
-          steps:              
-              - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Build'
-                inputs:
-                  command: 'build'
-                  projects: '$(projectvoyager)'
-                  configuration: $(buildConfiguration)
-
-        - job: BuildGalileo
-          steps:  
-              - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Build'
-                inputs:
-                  command: 'build'
-                  projects: '$(projectgalileo)'
-                  configuration: $(buildConfiguration)
 
     - stage: 'Tests'
       dependsOn:
         - BuildSolution
+      variables:
+        - template: Pipeline/Variables/globals-vars.yml
       jobs:
-        - job: Test
-          steps:
-              - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Test'
-                inputs:
-                  command: 'test'
-                  projects: '$(corepath)'
-                  configuration: $(buildConfiguration)
+      - template: Pipeline/dotnet-test.yml
 
 
     - stage: 'Publish'
       dependsOn:
         - Tests
+      variables:
+        - template: Pipeline/Variables/globals-vars.yml
       jobs:
-        - job: Publish
-          steps:
-              - task: DotNetCoreCLI@2
-                displayName: 'Dotnet Publish'
-                inputs:
-                  command: 'publish'
-                  projects: '$(corepath)'
-                  configuration: $(buildConfiguration)
-                  arguments: '--configuration debug --output $(Build.ArtifactStagingDirectory)'                
-
-              - task: PublishBuildArtifacts@1
-                displayName: Upload Artifacts
-                inputs:
-                  pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-                  artifactName: 'voyager.dev'
+      - template: Pipeline/dotnet-publish.yml
                   
 
 

@@ -1,0 +1,35 @@
+      jobs:
+        - job: RestoreVoyager
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Restore Voyager'
+                inputs:
+                  command: 'restore'
+                  projects: '$(projectvoyager)'
+                  configuration: $(buildConfiguration)
+        - job: RestoreGalileo
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Restore Galileo'
+                inputs:
+                  command: 'restore'
+                  projects: '$(projectgalileo)'
+                  configuration: $(buildConfiguration)
+
+        - job: BuildVoyager
+          steps:              
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(projectvoyager)'
+                  configuration: $(buildConfiguration)
+
+        - job: BuildGalileo
+          steps:  
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Build'
+                inputs:
+                  command: 'build'
+                  projects: '$(projectgalileo)'
+                  configuration: $(buildConfiguration)

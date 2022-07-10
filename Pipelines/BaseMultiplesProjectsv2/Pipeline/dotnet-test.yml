@@ -1,0 +1,9 @@
+      jobs:
+        - job: Test
+          steps:
+              - task: DotNetCoreCLI@2
+                displayName: 'Dotnet Test'
+                inputs:
+                  command: 'test'
+                  projects: '$(corepath)'
+                  configuration: $(buildConfiguration)
