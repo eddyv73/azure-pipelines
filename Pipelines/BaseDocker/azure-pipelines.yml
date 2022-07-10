@@ -52,14 +52,19 @@ stages:
                   command: 'publish'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
-                  arguments: '--configuration debug --output $(Build.ArtifactStagingDirectory)'                
+                  arguments: '--configuration debug --output $(Build.ArtifactStagingDirectory)'   
 
-              - task: PublishBuildArtifacts@1
-                displayName: Upload Artifacts
+        - job: Docker
+          dependsOn:
+            - Test
+          steps:
+              - task: Docker@2
                 inputs:
-                  pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-                  artifactName: 'voyager.dev'
-                  
+                  containerRegistry: 'WisterDR'
+                  repository: 'azure-pipelines'
+                  command: 'buildAndPush'
+                  Dockerfile: '**/Dockerfile'
+                                
 
 
 
