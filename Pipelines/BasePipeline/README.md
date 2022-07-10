@@ -25,6 +25,6 @@ stages:
         - job: publish
         - job: upload
 ```
-<img width="475" alt="image" src="https://user-images.githubusercontent.com/19657324/178130746-d715d143-de59-48a1-a183-2f8c2c162c42.png">
+<img width="275" alt="image" src="https://user-images.githubusercontent.com/19657324/178130746-d715d143-de59-48a1-a183-2f8c2c162c42.png">
 
 
