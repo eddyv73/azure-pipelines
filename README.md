@@ -15,6 +15,13 @@ The APIs in the examples are named : Voyager and Galileo.
 All Azure DevOps Pipelines [Azure DevOps](https://dev.azure.com/wistercorp/azure-pipelines/_build)
 
 # Base
+Scenario :
+- 1 Project Api
+- 1 Project Test
+
+Tech:
+- Dotnet 6
+
 Location: 
 ```
 └ Pipelines /
@@ -22,13 +29,20 @@ Location:
 ```
 ###### Azure DevOps Pipeline [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipeline?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=45&branchName=develop)
 # Base multiples projects
+Scenario :
+- 2 Project Api
+- 2 Project Test
+
+Tech:
+- Dotnet 6
+
 Location: 
 ```
 └ Pipelines /
     └ BaseMultiplesProjects /
 ``` 
-
 ###### Azure DevOps Pipeline  V1 :  [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultiplePro?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=46&branchName=develop)
+Pipeline Basic Configuration
 
 Location: 
 ```
@@ -37,8 +51,18 @@ Location:
 ```
 
 ###### Azure DevOps Pipeline  V2 : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultipleProV2?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=47&branchName=develop)
+Pipeline Avanced Configuration
 
 # Base docker using docker-compose
+Scenario :
+- 2 Project Api
+- 2 Project Test
+  
+Tech:
+- Dotnet 6
+- Docker
+- Docker-compose
+
 ###### Azure DevOps Pipeline : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BaseDocker?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=48&branchName=develop)
 Location: 
 ```
