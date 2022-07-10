@@ -70,10 +70,10 @@ stages:
                   configuration: $(buildConfiguration)
 
     - stage: 'Tests'
+      dependsOn:
+        - BuildSolution
       jobs:
         - job: Test
-          dependsOn:
-            - BuildSolution
           steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Test'
@@ -84,10 +84,10 @@ stages:
 
 
     - stage: 'Publish'
+      dependsOn:
+        - BuildSolution
       jobs:
         - job: Publish
-          dependsOn:
-            - Test
           steps:
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Publish'
