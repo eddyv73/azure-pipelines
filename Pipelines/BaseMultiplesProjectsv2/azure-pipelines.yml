@@ -15,36 +15,26 @@ variables:
   
 
 stages:
-
+  # Build the solution.
     - stage: 'BuildSolution'
-      # variables:
-      #   - template: Pipeline/Variables/globals-vars.yml
       jobs:
       - template: Pipeline/dotnet-build.yml
-
+  # Build the projects.
     - stage: 'BuildOnError'
       dependsOn: BuildSolution
       condition: failed()
-      variables:
-        - template: Pipeline/Variables/globals-vars.yml
       jobs:
       - template: Pipeline/dotnet-error.yml
-
-
+  # Run the tests.
     - stage: 'Tests'
       dependsOn:
         - BuildSolution
-      variables:
-        - template: Pipeline/Variables/globals-vars.yml
       jobs:
       - template: Pipeline/dotnet-test.yml
-
-
+  # Publish Artifact
     - stage: 'Publish'
       dependsOn:
         - Tests
-      variables:
-        - template: Pipeline/Variables/globals-vars.yml
       jobs:
       - template: Pipeline/dotnet-publish.yml
                   
