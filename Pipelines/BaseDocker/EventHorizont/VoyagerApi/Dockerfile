@@ -5,8 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["VoyagerApi/VoyagerApi.csproj", "VoyagerApi/"]
-RUN dotnet restore "VoyagerApi/VoyagerApi.csproj"
+COPY ["EventHorizont/VoyagerApi/VoyagerApi.csproj", "VoyagerApi/"]
+RUN dotnet restore "EventHorizont/VoyagerApi/VoyagerApi.csproj"
 COPY . .
 WORKDIR "/src/VoyagerApi"
 RUN dotnet build "VoyagerApi.csproj" -c Release -o /app/build
