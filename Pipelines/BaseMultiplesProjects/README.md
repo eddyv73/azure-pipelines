@@ -40,4 +40,4 @@ stages:
 ## Incorrect flow
 If some project has errors in the build, the pipeline build every project.
 
-<img width="502" alt="image" src="https://user-images.githubusercontent.com/19657324/178131885-4c89085b-bc13-49b0-a7da-65863d247585.png">
+<img width="502" alt="image" src="https://user-images.githubusercontent.com/19657324/178132100-0b6c888d-9b54-4a0c-a95d-b41f8daadf22.png">
