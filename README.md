@@ -15,10 +15,26 @@ The APIs in the examples are named : Voyager and Galileo.
 All Azure DevOps Pipelines [Azure DevOps](https://dev.azure.com/wistercorp/azure-pipelines/_build)
 
 # Base
+Location: 
+```
+└ Pipeline /
+    └ Basepipeline /
+```
 Azure DevOps Pipeline [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipeline?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=45&branchName=develop)
 # Base multiples projects
- 
+Location: 
+```
+└ Pipeline /
+    └ BaseMultiplesProjects /
+``` 
+
 Azure DevOps Pipeline  V1 :  [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultiplePro?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=46&branchName=develop)
+
+Location: 
+```
+└ Pipeline /
+    └ BaseMultplesprojectsv2 /
+```
 
 Azure DevOps Pipeline  V2 : [![Build Status](https://dev.azure.com/wistercorp/azure-pipelines/_apis/build/status/BasePipelineMultipleProV2?branchName=develop)](https://dev.azure.com/wistercorp/azure-pipelines/_build/latest?definitionId=47&branchName=develop)
 
