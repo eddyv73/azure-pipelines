@@ -1,7 +1,7 @@
 # Azure pipelines templates
 Azure Pipelines for multiples escenarios
 
-In this repository, you can found multiples escenarios for Azure Pipelines and some "Good" practices.
+In this repository, you can find multiples scenarios for Azure Pipelines and some "Good" practices.
 
 ##### Considerations
 All examples has the same code with minimum differences, this repository has the focus on the azure pipelines.
