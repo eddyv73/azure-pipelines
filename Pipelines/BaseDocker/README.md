@@ -32,6 +32,6 @@ stages:
         - job: dockerbuild
         - job: DockerPush
 ```
-<img width="275" alt="image" src="https://user-images.githubusercontent.com/19657324/178130746-d715d143-de59-48a1-a183-2f8c2c162c42.png">
+<img width="275" alt="image" src="https://user-images.githubusercontent.com/19657324/178546952-f7a0ed82-1e22-4717-9497-dc23e65d5620.png">
 
 
