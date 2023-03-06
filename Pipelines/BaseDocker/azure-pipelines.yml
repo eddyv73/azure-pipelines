@@ -25,6 +25,7 @@ stages:
                   command: 'restore'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
+
                 
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Build'
@@ -32,6 +33,8 @@ stages:
                   command: 'build'
                   projects: '$(corepath)'
                   configuration: $(buildConfiguration)
+                    | tee /dev/tty | sed -n 's/^##vso\[task.setvariable variable=buildOutput;isOutput=true\]//p' > build-output.txt
+                
 
         - job: Test
           dependsOn:
