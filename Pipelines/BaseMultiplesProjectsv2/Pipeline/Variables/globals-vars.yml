@@ -1,4 +1,5 @@
 variables:
-  corepath: 'Pipelines/BaseMultiplesProjects/EventHorizont/EventHorizont.sln'
-  projectvoyager: 'Pipelines/BaseMultiplesProjects/EventHorizont/VoyagerApi/VoyagerApi.csproj'
-  projectgalileo: 'Pipelines/BaseMultiplesProjects/EventHorizont/Galileo/GalileoApi.csproj'
+  corepath: 'Pipelines/BaseMultiplesProjectsv2/EventHorizont/EventHorizont.sln'
+  projectvoyager: 'Pipelines/BaseMultiplesProjectsv2/EventHorizont/VoyagerApi/VoyagerApi.csproj'
+  projectgalileo: 'Pipelines/BaseMultiplesProjectsv2/EventHorizont/Galileo/GalileoApi.csproj'
+  buildConfiguration: 'Release'

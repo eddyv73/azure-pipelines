@@ -1,12 +1,17 @@
       jobs:
         - job: Build
           steps:
+              - task: UseDotNet@2
+                displayName: 'Install .NET 6.0'
+                inputs:
+                  packageType: 'sdk'
+                  version: '6.0.x'
+                  
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Restore'
                 inputs:
                   command: 'restore'
                   projects: '$(corepath)'
-                  configuration: $(buildConfiguration)
                 
               - task: DotNetCoreCLI@2
                 displayName: 'Dotnet Build'
