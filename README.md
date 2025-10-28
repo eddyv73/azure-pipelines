@@ -6,7 +6,7 @@ In this repository, you can find multiples scenarios for Azure Pipelines and som
 ##### Considerations
 All examples has the same code with minimum differences, this repository has the focus on the azure pipelines.
 
-The solutions in the examples is named : Event Horizont, has two dotnet projects, and a two test projects. `Net 6`
+The solutions in the examples is named : Event Horizont, has two dotnet projects, and a two test projects. `Net 9`
 
 The APIs in the examples are named : Voyager and Galileo.
 (Like a spacecrafts)
@@ -20,7 +20,7 @@ Scenario :
 - 1 Project Test
 
 Tech:
-- Dotnet 6
+- Dotnet 9
 
 Location: 
 ```
@@ -34,7 +34,7 @@ Scenario :
 - 2 Project Test
 
 Tech:
-- Dotnet 6
+- Dotnet 9
 
 Location: 
 ```
@@ -59,7 +59,7 @@ Scenario :
 - 2 Project Test
   
 Tech:
-- Dotnet 6
+- Dotnet 9
 - Docker
 - Docker-compose
 
